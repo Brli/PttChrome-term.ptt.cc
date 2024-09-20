@@ -1,4 +1,4 @@
-import { stringify } from "querystring";
+import { stringify } from "qs";
 import { decode } from "base58";
 
 const noop = () => {};

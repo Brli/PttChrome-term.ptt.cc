@@ -121,9 +121,10 @@ module.exports = {
     new HtmlWebpackHarddiskPlugin()
   ]),
   devServer: {
-    contentBase: path.join(__dirname, './dist'),
-    proxy: {
-      '/bbs': {
+    static: path.join(__dirname, './dist'),
+    proxy: [
+      {
+        context: ['/bbs'],
         target: 'https://ws.ptt.cc',
         secure: true,
         ws: true,
@@ -133,6 +134,6 @@ module.exports = {
           proxyReq.setHeader('origin', 'https://term.ptt.cc');
         }
       }
-    }
+    ]
   }
 };

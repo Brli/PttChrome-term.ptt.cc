@@ -1,7 +1,7 @@
 import cx from "classnames";
 import React from "react";
 import { compose, lifecycle, withHandlers } from "recompose";
-import { MenuItem } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 import { i18n } from "../../js/i18n";
 import "./DropdownMenu.css";
 
@@ -100,41 +100,41 @@ export const DropdownMenu = ({
   >
     {selEnabled && (
       <React.Fragment>
-        <MenuItem eventKey="copy" onSelect={onMenuSelect}>
+        <Dropdown.Item eventKey="copy" onSelect={onMenuSelect}>
           {i18n("cmenu_copy")}
           <span className="DropdownMenu__Item__HotKey">Ctrl+C</span>
-        </MenuItem>
-        <MenuItem eventKey="copyAnsi" onSelect={onMenuSelect}>
+        </Dropdown.Item>
+        <Dropdown.Item eventKey="copyAnsi" onSelect={onMenuSelect}>
           {i18n("cmenu_copyAnsi")}
-        </MenuItem>
+        </Dropdown.Item>
       </React.Fragment>
     )}
     {normalEnabled && (
-      <MenuItem eventKey="paste" onSelect={onMenuSelect}>
+      <Dropdown.Item eventKey="paste" onSelect={onMenuSelect}>
         {i18n("cmenu_paste")}
         <span className="DropdownMenu__Item__HotKey">Shift+Insert</span>
-      </MenuItem>
+      </Dropdown.Item>
     )}
     {selEnabled && (
-      <MenuItem eventKey="searchGoogle" onSelect={onMenuSelect}>
+      <Dropdown.Item eventKey="searchGoogle" onSelect={onMenuSelect}>
         {i18n("cmenu_searchGoogle")}{" "}
         <span>'{normalizeSelectedText(selectedText)}'</span>
-      </MenuItem>
+      </Dropdown.Item>
     )}
     {urlEnabled && (
       <React.Fragment>
-        <MenuItem eventKey="openUrlNewTab" onSelect={onMenuSelect}>
+        <Dropdown.Item eventKey="openUrlNewTab" onSelect={onMenuSelect}>
           {i18n("cmenu_openUrlNewTab")}
-        </MenuItem>
-        <MenuItem eventKey="copyLinkUrl" onSelect={onMenuSelect}>
+        </Dropdown.Item>
+        <Dropdown.Item eventKey="copyLinkUrl" onSelect={onMenuSelect}>
           {i18n("cmenu_copyLinkUrl")}
-        </MenuItem>
+        </Dropdown.Item>
       </React.Fragment>
     )}
-    <MenuItem divider />
+    <Dropdown.Item divider />
     {selEnabled && (
       <React.Fragment>
-        <MenuItem className="DropdownMenu__Item--quickSearch">
+        <Dropdown.Item className="DropdownMenu__Item--quickSearch">
           {i18n("cmenu_quickSearch")}{" "}
           <span style={{ float: "right" }}>&#9658;</span>
           <ul
@@ -150,26 +150,26 @@ export const DropdownMenu = ({
             role="menu"
           >
             {QUICK_SEARCH.providers.map(p => (
-              <MenuItem
+              <Dropdown.Item
                 key={p.url}
                 eventKey={p.url}
                 onSelect={onQuickSearchSelect}
               >
                 {p.name}
-              </MenuItem>
+              </Dropdown.Item>
             ))}
           </ul>
-        </MenuItem>
-        <MenuItem divider />
+        </Dropdown.Item>
+        <Dropdown.Item divider />
       </React.Fragment>
     )}
     {normalEnabled && (
       <React.Fragment>
-        <MenuItem eventKey="selectAll" onSelect={onMenuSelect}>
+        <Dropdown.Item eventKey="selectAll" onSelect={onMenuSelect}>
           {i18n("cmenu_selectAll")}
           <span className="DropdownMenu__Item__HotKey">Ctrl+A</span>
-        </MenuItem>
-        <MenuItem
+        </Dropdown.Item>
+        <Dropdown.Item
           eventKey="mouseBrowsing"
           onSelect={onMenuSelect}
           className={cx({
@@ -177,17 +177,17 @@ export const DropdownMenu = ({
           })}
         >
           {i18n("cmenu_mouseBrowsing")}
-        </MenuItem>
-        <MenuItem onClick={onInputHelperClick}>
+        </Dropdown.Item>
+        <Dropdown.Item onClick={onInputHelperClick}>
           {i18n("cmenu_showInputHelper")}
-        </MenuItem>
-        <MenuItem onClick={onLiveArticleHelperClick}>
+        </Dropdown.Item>
+        <Dropdown.Item onClick={onLiveArticleHelperClick}>
           {i18n("cmenu_showLiveArticleHelper")}
-        </MenuItem>
-        <MenuItem divider />
+        </Dropdown.Item>
+        <Dropdown.Item divider />
       </React.Fragment>
     )}
-    <MenuItem onClick={onSettingsClick}>{i18n("cmenu_settings")}</MenuItem>
+    <Dropdown.Item onClick={onSettingsClick}>{i18n("cmenu_settings")}</Dropdown.Item>
   </ul>
 );
 

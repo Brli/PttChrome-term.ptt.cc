@@ -11,7 +11,7 @@ import {
   Button,
   Checkbox,
   FormGroup,
-  ControlLabel,
+  Form,
   FormControl,
   OverlayTrigger,
   Popover
@@ -217,43 +217,43 @@ export const PrefModal = ({
                       &times;
                     </button>
                   </legend>
-                  <Checkbox
+                  <Form.Check
                     name="enablePicPreview"
                     checked={values.enablePicPreview}
                     onChange={onCheckboxChange}
                   >
                     {i18n("options_enablePicPreview")}
-                  </Checkbox>
-                  <Checkbox
+                  </Form.Check>
+                  <Form.Check
                     name="enableNotifications"
                     checked={values.enableNotifications}
                     onChange={onCheckboxChange}
                   >
                     {i18n("options_enableNotifications")}
-                  </Checkbox>
-                  <Checkbox
+                  </Form.Check>
+                  <Form.Check
                     name="enableEasyReading"
                     checked={values.enableEasyReading}
                     onChange={onCheckboxChange}
                   >
                     {i18n("options_enableEasyReading")}
-                  </Checkbox>
-                  <Checkbox
+                  </Form.Check>
+                  <Form.Check
                     name="endTurnsOnLiveUpdate"
                     checked={values.endTurnsOnLiveUpdate}
                     onChange={onCheckboxChange}
                   >
                     {i18n("options_endTurnsOnLiveUpdate")}
-                  </Checkbox>
-                  <Checkbox
+                  </Form.Check>
+                  <Form.Check
                     name="copyOnSelect"
                     checked={values.copyOnSelect}
                     onChange={onCheckboxChange}
                   >
                     {i18n("options_copyOnSelect")}
-                  </Checkbox>
+                  </Form.Check>
                   <FormGroup controlId="antiIdleTime">
-                    <ControlLabel>{i18n("options_antiIdleTime")}</ControlLabel>
+                    <Form.Label>{i18n("options_antiIdleTime")}</Form.Label>
                     <OverlayTrigger
                       trigger="focus"
                       placement="right"
@@ -272,7 +272,7 @@ export const PrefModal = ({
                     </OverlayTrigger>
                   </FormGroup>
                   <FormGroup controlId="lineWrap">
-                    <ControlLabel>{i18n("options_lineWrap")}</ControlLabel>
+                    <Form.Label>{i18n("options_lineWrap")}</Form.Label>
                     <FormControl
                       name="lineWrap"
                       type="number"
@@ -284,7 +284,7 @@ export const PrefModal = ({
                 <fieldset className="PrefModal__Grid__Col--right__Fieldset">
                   <legend>{i18n("options_appearance")}</legend>
                   <FormGroup controlId="fontFace">
-                    <ControlLabel>{i18n("options_fontFace")}</ControlLabel>
+                    <Form.Label>{i18n("options_fontFace")}</Form.Label>
                     <OverlayTrigger
                       trigger="focus"
                       placement="right"
@@ -303,7 +303,7 @@ export const PrefModal = ({
                     </OverlayTrigger>
                   </FormGroup>
                   <FormGroup controlId="bbsMargin">
-                    <ControlLabel>{i18n("options_bbsMargin")}</ControlLabel>
+                    <Form.Label>{i18n("options_bbsMargin")}</Form.Label>
                     <FormControl
                       name="bbsMargin"
                       type="number"
@@ -312,7 +312,7 @@ export const PrefModal = ({
                     />
                   </FormGroup>
                   <FormGroup controlId="termSizeMode">
-                    <ControlLabel>{i18n("options_termSize")}</ControlLabel>
+                    <Form.Label>{i18n("options_termSize")}</Form.Label>
                     <FormControl
                       componentClass="select"
                       name="termSizeMode"
@@ -339,9 +339,9 @@ export const PrefModal = ({
                         return (
                           <div>
                             <FormGroup controlId="termSize_cols">
-                              <ControlLabel>
+                              <Form.Label>
                                 {i18n("options_cols")}
-                              </ControlLabel>
+                              </Form.Label>
                               <FormControl
                                 name="termSize.cols"
                                 type="number"
@@ -350,9 +350,9 @@ export const PrefModal = ({
                               />
                             </FormGroup>
                             <FormGroup controlId="termSize_rows">
-                              <ControlLabel>
+                              <Form.Label>
                                 {i18n("options_rows")}
-                              </ControlLabel>
+                              </Form.Label>
                               <FormControl
                                 name="termSize.rows"
                                 type="number"
@@ -360,21 +360,21 @@ export const PrefModal = ({
                                 onChange={onNumberInputChange}
                               />
                             </FormGroup>
-                            <Checkbox
+                            <Form.Check
                               name="fontFitWindowWidth"
                               checked={values.fontFitWindowWidth}
                               onChange={onCheckboxChange}
                             >
                               {i18n("options_fontFitWindowWidth")}
-                            </Checkbox>
+                            </Form.Check>
                           </div>
                         );
                       case "fixed-font-size":
                         return (
                           <FormGroup controlId="fontSize">
-                            <ControlLabel>
+                            <Form.Label>
                               {i18n("options_fontSize")}
-                            </ControlLabel>
+                            </Form.Label>
                             <FormControl
                               name="fontSize"
                               type="number"
@@ -390,20 +390,20 @@ export const PrefModal = ({
                 </fieldset>
                 <fieldset className="PrefModal__Grid__Col--right__Fieldset">
                   <legend>{i18n("options_mouseBrowsing")}</legend>
-                  <Checkbox
+                  <Form.Check
                     name="useMouseBrowsing"
                     checked={values.useMouseBrowsing}
                     onChange={onCheckboxChange}
                   >
                     {i18n("options_useMouseBrowsing")}
-                  </Checkbox>
-                  <Checkbox
+                  </Form.Check>
+                  <Form.Check
                     name="mouseBrowsingHighlight"
                     checked={values.mouseBrowsingHighlight}
                     onChange={onCheckboxChange}
                   >
                     {i18n("options_mouseBrowsingHighlight")}
-                  </Checkbox>
+                  </Form.Check>
                   <div className="PrefModal__Grid__Col--right__MouseBrowsingHighlightColor">
                     {i18n("options_highlightColor")}
                     <FormControl
@@ -430,9 +430,9 @@ export const PrefModal = ({
                     </FormControl>
                   </div>
                   <FormGroup controlId="mouseLeftFunction">
-                    <ControlLabel>
+                    <Form.Label>
                       {i18n("options_mouseLeftFunction")}
-                    </ControlLabel>
+                    </Form.Label>
                     <FormControl
                       componentClass="select"
                       name="mouseLeftFunction"
@@ -451,9 +451,9 @@ export const PrefModal = ({
                     </FormControl>
                   </FormGroup>
                   <FormGroup controlId="mouseMiddleFunction">
-                    <ControlLabel>
+                    <Form.Label>
                       {i18n("options_mouseMiddleFunction")}
-                    </ControlLabel>
+                    </Form.Label>
                     <FormControl
                       componentClass="select"
                       name="mouseMiddleFunction"
@@ -473,9 +473,9 @@ export const PrefModal = ({
                     </FormControl>
                   </FormGroup>
                   <FormGroup controlId="mouseWheelFunction1">
-                    <ControlLabel>
+                    <Form.Label>
                       {i18n("options_mouseWheelFunction1")}
-                    </ControlLabel>
+                    </Form.Label>
                     <FormControl
                       componentClass="select"
                       name="mouseWheelFunction1"
@@ -495,9 +495,9 @@ export const PrefModal = ({
                     </FormControl>
                   </FormGroup>
                   <FormGroup controlId="mouseWheelFunction2">
-                    <ControlLabel>
+                    <Form.Label>
                       {i18n("options_mouseWheelFunction2")}
-                    </ControlLabel>
+                    </Form.Label>
                     <FormControl
                       componentClass="select"
                       name="options_mouseWheelFunction2"
@@ -517,9 +517,9 @@ export const PrefModal = ({
                     </FormControl>
                   </FormGroup>
                   <FormGroup controlId="mouseWheelFunction3">
-                    <ControlLabel>
+                    <Form.Label>
                       {i18n("options_mouseWheelFunction3")}
-                    </ControlLabel>
+                    </Form.Label>
                     <FormControl
                       componentClass="select"
                       name="options_mouseWheelFunction3"

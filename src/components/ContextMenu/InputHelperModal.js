@@ -10,7 +10,7 @@ import {
   Nav,
   NavItem,
   NavDropdown,
-  MenuItem,
+  Dropdown,
   Checkbox,
   SplitButton
 } from "react-bootstrap";
@@ -699,16 +699,16 @@ export const InputHelperModal = ({
               <NavItem eventKey="colors">{i18n("colorTitle")}</NavItem>
               <NavDropdown eventKey="symbols" title={i18n("symTitle")}>
                 {Object.keys(SYMBOLS).map(group => (
-                  <MenuItem eventKey={`symbols.${group}`}>
+                  <Dropdown.Item eventKey={`symbols.${group}`}>
                     {i18n(`symTitle_${group}`)}
-                  </MenuItem>
+                  </Dropdown.Item>
                 ))}
               </NavDropdown>
               <NavDropdown eventKey="emoticons" title={i18n("emoTitle")}>
                 {Object.keys(EMOTICONS).map(group => (
-                  <MenuItem eventKey={`emoticons.${group}`}>
+                  <Dropdown.Item eventKey={`emoticons.${group}`}>
                     {i18n(`emoTitle_${group}`)}
-                  </MenuItem>
+                  </Dropdown.Item>
                 ))}
               </NavDropdown>
             </Nav>
@@ -844,25 +844,25 @@ export const InputHelperModal = ({
                 </div>
                 <Row>
                   <Col xs={4}>
-                    <Checkbox checked={isBlink} onChange={onBlinkChange}>
+                    <Form.Check checked={isBlink} onChange={onBlinkChange}>
                       {i18n("colorHelperBlink")}
-                    </Checkbox>
+                    </Form.Check>
                   </Col>
                   <Col xs={8} className="InputHelperModal__SendButtonContainer">
                     <SplitButton
                       title={i18n("colorHelperSend")}
                       onClick={onSendClick}
                     >
-                      <MenuItem eventKey="foreground" onSelect={onSendSelect}>
+                      <Dropdown.Item eventKey="foreground" onSelect={onSendSelect}>
                         {i18n("colorHelperSendMenuFore")}
-                      </MenuItem>
-                      <MenuItem eventKey="background" onSelect={onSendSelect}>
+                      </Dropdown.Item>
+                      <Dropdown.Item eventKey="background" onSelect={onSendSelect}>
                         {i18n("colorHelperSendMenuBack")}
-                      </MenuItem>
-                      <MenuItem divider />
-                      <MenuItem eventKey="reset" onSelect={onReset}>
+                      </Dropdown.Item>
+                      <Dropdown.Item divider />
+                      <Dropdown.Item eventKey="reset" onSelect={onReset}>
                         {i18n("colorHelperSendMenuReset")}
-                      </MenuItem>
+                      </Dropdown.Item>
                     </SplitButton>
                   </Col>
                 </Row>
