@@ -9,7 +9,6 @@ import {
   Nav,
   NavItem,
   Button,
-  Checkbox,
   FormGroup,
   Form,
   FormControl,

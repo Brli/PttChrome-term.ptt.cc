@@ -11,7 +11,7 @@ import {
   NavItem,
   NavDropdown,
   Dropdown,
-  Checkbox,
+  Form,
   SplitButton
 } from "react-bootstrap";
 import ColorSpan from "../Row/WordSegmentBuilder/ColorSpan";
